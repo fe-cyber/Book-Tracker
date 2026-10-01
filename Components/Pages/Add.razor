@@ -1,0 +1,50 @@
+﻿@page "/add"
+@rendermode InteractiveServer
+
+<PageTitle>Add Book</PageTitle>
+
+<h1>Add Book</h1>
+
+<EditForm Model="@book" OnValidSubmit="@HandleSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <InputText id="title"
+                   class="form-control"
+                   @bind-Value="book.Title" />
+    </div>
+
+    <div class="mb-3">
+        <label for="author" class="form-label">Author</label>
+        <InputText id="author"
+                   class="form-control"
+                   @bind-Value="book.Author" />
+    </div>
+
+    <div class="mb-3">
+        <label for="genre" class="form-label">Genre</label>
+        <InputText id="genre"
+                   class="form-control"
+                   @bind-Value="book.Genre" />
+    </div>
+
+    <div class="mb-3">
+        <label for="rating" class="form-label">Rating</label>
+        <InputNumber id="rating"
+                     class="form-control"
+                     @bind-Value="book.Rating" />
+    </div>
+
+    <div class="mb-3">
+        <label for="comments" class="form-label">Comments</label>
+        <InputTextArea id="comments"
+                       class="form-control"
+                       @bind-Value="book.Comments" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">
+        Add Book
+    </button>
+</EditForm>
